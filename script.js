@@ -135,7 +135,7 @@ function nextJourney(startAt){
 
   /* Type out the text */
   text.textContent = "";
-  typeText(text, page.text, 0);
+  typeText(text, page.text);
 
   /* Update dots */
   renderDots();
@@ -148,11 +148,23 @@ function nextJourney(startAt){
   }
 }
 
-function typeText(el, str, i){
-  if(i < str.length){
-    el.textContent += str[i];
-    setTimeout(function(){ typeText(el, str, i + 1); }, 30);
+let typingTimer = null;
+
+function typeText(el, str){
+  clearTimeout(typingTimer);   // stop old typing
+  el.textContent = "";
+
+  let i = 0;
+
+  function type(){
+    if(i < str.length){
+      el.textContent += str[i];
+      i++;
+      typingTimer = setTimeout(type, 30);
+    }
   }
+
+  type();
 }
 
 function renderDots(){
@@ -354,3 +366,4 @@ function animate(){
 }
 
 animate();
+
