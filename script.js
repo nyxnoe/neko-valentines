@@ -2,7 +2,7 @@
    PASSWORD + MUSIC (never stops)
 ================================ */
 
-const PASSWORD = "1402";
+const PASSWORD = "1405";
 const music = document.getElementById("bgm");
 
 /* Keep music alive no matter what - re-attach on any user interaction */
@@ -366,4 +366,5 @@ function animate(){
 }
 
 animate();
+
 
