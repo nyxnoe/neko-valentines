@@ -279,9 +279,11 @@ button:hover{
 }
 
 .finale-photo-strip{
+  scroll-behavior: smooth;
   display:flex;
   gap:12px;
   overflow-x:auto;
+  overflow-y:hidden;
   padding:15px 5px;
   width:100%;
   -webkit-overflow-scrolling:touch;
@@ -501,3 +503,4 @@ canvas{
     margin-bottom:10px;
   }
 }
+
