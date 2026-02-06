@@ -1,0 +1,503 @@
+/* ========= RESET ========= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+/* ========= BODY ========= */
+body{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  min-height:100vh;
+  overflow:hidden;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  color:white;
+
+  background: url("image.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.25);
+  z-index:0;
+  pointer-events:none;
+}
+
+
+/* ========= SCREEN LAYOUT ========= */
+.screen{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:25px;
+  z-index:1;
+}
+
+.hidden{
+  display:none !important;
+}
+
+
+/* ========= HEADINGS ========= */
+h1{
+  font-size:28px;
+  margin-bottom:20px;
+  text-shadow:0 0 12px pink;
+}
+
+p{
+  margin-bottom:10px;
+  text-shadow:0 0 6px rgba(255,77,136,0.5);
+}
+
+
+/* ========= PASSWORD INPUT ========= */
+input{
+  padding:12px 18px;
+  border:none;
+  border-radius:20px;
+  outline:none;
+
+  font-size:16px;
+  text-align:center;
+
+  background:white;
+  color:#ff4d88;
+
+  box-shadow:0 0 10px pink;
+  margin:10px 0;
+}
+
+
+/* ========= BUTTONS ========= */
+button{
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+
+  font-size:18px;
+  margin:10px;
+
+  background:#ff4d88;
+  color:white;
+
+  cursor:pointer;
+
+  box-shadow:0 0 15px rgba(255,0,120,0.6);
+  transition:background 0.25s, transform 0.15s;
+}
+
+button:active{
+  transform:scale(0.95);
+}
+
+button:hover{
+  background:#ff2e75;
+}
+
+
+/* ========= JOURNEY CARD ========= */
+.journey-card{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  width:100%;
+  max-width:420px;
+  max-height:95vh;
+  overflow-y:auto;
+  padding:20px 10px;
+  -webkit-overflow-scrolling:touch;
+}
+
+.journey-subtitle{
+  font-size:16px;
+  font-style:italic;
+  opacity:0.9;
+  margin-bottom:20px;
+}
+
+
+/* ========= PHOTO FRAME ========= */
+.photo-frame{
+  position:relative;
+  width:85%;
+  max-width:300px;
+  margin-bottom:18px;
+}
+
+.journey-img{
+  width:100%;
+  border-radius:16px;
+  box-shadow:0 0 20px rgba(255,105,180,0.6);
+  object-fit:cover;
+  max-height:360px;
+  animation: fadeInPhoto 0.6s ease-out;
+}
+
+@keyframes fadeInPhoto{
+  from{ opacity:0; transform:scale(0.92) translateY(12px); }
+  to{ opacity:1; transform:scale(1) translateY(0); }
+}
+
+
+/* ========= MANGA SPEECH BUBBLE ========= */
+.bubble{
+  background:white;
+  color:#ff4d88;
+
+  width:85%;
+  max-width:350px;
+
+  padding:22px;
+  border-radius:25px;
+
+  font-size:18px;
+  line-height:1.4;
+
+  box-shadow:0 0 20px pink;
+
+  position:relative;
+  margin-bottom:15px;
+  min-height:60px;
+}
+
+.bubble::after{
+  content:"";
+  position:absolute;
+  bottom:-15px;
+  left:40px;
+
+  width:0;
+  height:0;
+
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+  border-top:15px solid white;
+}
+
+
+/* ========= JOURNEY NAV ========= */
+.journey-nav{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+#journey-dots{
+  display:flex;
+  gap:8px;
+}
+
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.35);
+  transition:background 0.3s, transform 0.3s;
+}
+
+.dot.active{
+  background:#ff4d88;
+  transform:scale(1.3);
+  box-shadow:0 0 8px #ff4d88;
+}
+
+
+/* ========= YES / NO BUTTON AREA ========= */
+.btns{
+  position:relative;
+  width:100%;
+  height:200px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+#yes{
+  font-size:22px;
+  padding:16px 36px;
+  animation: pulseYes 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseYes{
+  0%,100%{ transform:scale(1); box-shadow:0 0 15px rgba(255,0,120,0.6); }
+  50%{ transform:scale(1.08); box-shadow:0 0 30px rgba(255,0,120,0.9); }
+}
+
+
+/* ========= FINALE ========= */
+#finale{
+  background: linear-gradient(135deg, #ff6b9d 0%, #ffa8c5 30%, #ffe0ec 60%, #fff5f9 100%);
+  z-index:10;
+  overflow-y:auto;
+}
+
+.finale-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:30px 20px;
+  min-height:100vh;
+  width:100%;
+  max-width:600px;
+}
+
+.finale-title{
+  font-size:32px;
+  color:#d63384;
+  text-shadow:0 0 20px rgba(255,105,180,0.5);
+  margin-bottom:20px;
+  animation: bounceIn 0.8s ease-out;
+  line-height:1.3;
+}
+
+@keyframes bounceIn{
+  0%{ opacity:0; transform:scale(0.3); }
+  50%{ transform:scale(1.05); }
+  70%{ transform:scale(0.95); }
+  100%{ opacity:1; transform:scale(1); }
+}
+
+.finale-photo-strip{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding:15px 5px;
+  width:100%;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+}
+
+.finale-photo-strip img{
+  width:140px;
+  height:180px;
+  border-radius:12px;
+  object-fit:cover;
+  box-shadow:0 4px 15px rgba(0,0,0,0.15);
+  flex-shrink:0;
+  scroll-snap-align:center;
+  border:3px solid white;
+  transition:transform 0.3s;
+}
+
+.finale-photo-strip img:hover{
+  transform:scale(1.05) rotate(-2deg);
+}
+
+.finale-msg{
+  font-size:20px;
+  color:#c2185b;
+  margin:25px 0;
+  line-height:1.6;
+  max-width:500px;
+  animation: fadeUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeUp{
+  from{ opacity:0; transform:translateY(20px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+
+.finale-small{
+  font-size:14px;
+  color:#e91e84;
+  opacity:0.8;
+  margin-top:20px;
+  font-style:italic;
+}
+
+.finale-footer{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  margin-top:auto;
+  padding-top:20px;
+}
+
+/* Beating heart at the bottom */
+.infinity-heart{
+  width:50px;
+  height:50px;
+  margin-top:15px;
+  position:relative;
+  animation: heartBeat 1.2s ease-in-out infinite;
+}
+
+.infinity-heart::before,
+.infinity-heart::after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:26px;
+  height:40px;
+  border-radius:26px 26px 0 0;
+  background:#ff4d88;
+}
+
+.infinity-heart::before{
+  left:25px;
+  transform:rotate(-45deg);
+  transform-origin:0 100%;
+}
+
+.infinity-heart::after{
+  left:0;
+  transform:rotate(45deg);
+  transform-origin:100% 100%;
+}
+
+@keyframes heartBeat{
+  0%,100%{ transform:scale(1); }
+  15%{ transform:scale(1.25); }
+  30%{ transform:scale(1); }
+  45%{ transform:scale(1.15); }
+  60%{ transform:scale(1); }
+}
+
+/* Floating hearts in finale */
+.finale-float-heart{
+  position:fixed;
+  font-size:24px;
+  animation:floatUp linear forwards;
+  pointer-events:none;
+  z-index:11;
+}
+
+@keyframes floatUp{
+  0%{ opacity:1; transform:translateY(0) scale(1) rotate(0deg); }
+  100%{ opacity:0; transform:translateY(-100vh) scale(0.5) rotate(45deg); }
+}
+
+
+/* ========= CANVAS EFFECTS ========= */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  pointer-events:none;
+  z-index:0;
+}
+
+
+/* ========= ANIME GLOW EFFECT ========= */
+.glow{
+  text-shadow:0 0 8px pink, 0 0 16px hotpink;
+}
+
+
+/* ========= RESPONSIVE (MOBILE OPTIMIZED) ========= */
+@media(max-width:600px){
+
+  h1{
+    font-size:20px;
+    margin-bottom:14px;
+  }
+
+  p{
+    font-size:14px;
+  }
+
+  .bubble{
+    font-size:15px;
+    width:92%;
+    padding:16px;
+  }
+
+  button{
+    font-size:15px;
+    padding:10px 20px;
+  }
+
+  input{
+    width:75%;
+    font-size:14px;
+  }
+
+  .journey-img{
+    max-height:280px;
+  }
+
+  .screen{
+    padding:15px;
+  }
+
+  .btns{
+    height:160px;
+  }
+
+  .finale-title{
+    font-size:24px;
+  }
+
+  .finale-msg{
+    font-size:17px;
+  }
+
+  .finale-photo-strip img{
+    width:110px;
+    height:145px;
+  }
+
+  #yes{
+    font-size:18px;
+    padding:14px 30px;
+  }
+}
+
+@media(max-width:360px){
+  h1{
+    font-size:18px;
+  }
+
+  .bubble{
+    font-size:14px;
+    padding:14px;
+  }
+
+  .journey-img{
+    max-height:240px;
+  }
+
+  .finale-photo-strip img{
+    width:90px;
+    height:120px;
+  }
+}
+
+/* ========= LANDSCAPE MOBILE ========= */
+@media(max-height:500px){
+  .journey-img{
+    max-height:180px;
+    margin-bottom:8px;
+  }
+
+  .bubble{
+    padding:12px;
+    font-size:14px;
+  }
+
+  h1{
+    font-size:18px;
+    margin-bottom:10px;
+  }
+}
