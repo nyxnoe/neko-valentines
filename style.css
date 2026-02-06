@@ -10,6 +10,7 @@ body{
   font-family: "Comic Sans MS", cursive, sans-serif;
   min-height:100vh;
   overflow:hidden;
+  overflow-y:auto;
 
   display:flex;
   justify-content:center;
@@ -249,7 +250,9 @@ button:hover{
 #finale{
   background: linear-gradient(135deg, #ff6b9d 0%, #ffa8c5 30%, #ffe0ec 60%, #fff5f9 100%);
   z-index:10;
+  height:100vh;
   overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
 
 .finale-content{
@@ -281,6 +284,7 @@ button:hover{
 .finale-photo-strip{
   scroll-behavior: smooth;
   display:flex;
+  min-height:190px;
   gap:12px;
   overflow-x:auto;
   overflow-y:hidden;
@@ -503,4 +507,5 @@ canvas{
     margin-bottom:10px;
   }
 }
+
 
